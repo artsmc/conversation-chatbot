@@ -1,0 +1,47 @@
+.imageContainer {
+    flex: 1;
+    background-color: #4a90e2; // Light blue background
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.imageWrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    border: 4px solid white;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.progressBar {
+    width: 80%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    margin-top: 1rem;
+    position: relative;
+}
+
+.progress {
+    width: 50%; // Adjust this width dynamically if needed
+    height: 100%;
+    background-color: white;
+    border-radius: 4px;
+}
