@@ -1,5 +1,35 @@
-/* components/notes.style.module.scss */
-.notes {
-    // styles for notes
-    position: relative;
+.notesSection {
+    padding: 2rem;
+    background-color: #f8f9fa;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.notesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.noteCard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    color: #333;
+}
+
+.noteCard h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.noteCard p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
 }

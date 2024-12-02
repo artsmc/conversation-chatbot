@@ -1,6 +1,7 @@
-// store/reducers.ts
+// store/reducers/index.ts
 import { combineReducers } from 'redux';
-import chatReducer from './reducers/chat.reducer';
+import chatReducer from './chat.reducer';
+// import other reducers...
 
 const rootReducer = combineReducers({
   chat: chatReducer,

@@ -1,19 +1,12 @@
 // services/auth.service.ts
-import axios from 'axios';
+import api from './api';
 
-const API_URL = 'https://yourapi.com/auth/';
-
-const login = (username: string, password: string) => {
-  return axios.post(API_URL + 'login', { username, password });
+const login = (email: string, password: string) => {
+  return api.post('/auth/login', { email, password });
 };
-
-const logout = () => {
-  localStorage.removeItem('user');
-};
-
 const authService = {
   login,
-  logout,
+  // other methods...
 };
 
 export default authService;

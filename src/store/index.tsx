@@ -1,7 +1,12 @@
 // store/index.ts
-import { createStore } from 'redux';
+import { AnyAction } from 'redux';
 import rootReducer from './reducers';
+import { configureStore } from '@reduxjs/toolkit'
+import { ThunkDispatch } from 'redux-thunk';
 
-const store = createStore(rootReducer);
+const store = configureStore({ reducer: rootReducer })
+
+export type AppDispatch = ThunkDispatch<RootState, void, AnyAction>;
+export type RootState = ReturnType<typeof rootReducer>;
 
 export default store;

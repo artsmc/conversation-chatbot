@@ -1,6 +1,6 @@
 .imageContainer {
     flex: 1;
-    background-color: #4a90e2; // Light blue background
+    background-color: #4167C8; // Light blue background
     color: white;
     display: flex;
     flex-direction: column;
@@ -8,6 +8,9 @@
     align-items: center;
     text-align: center;
     padding: 2rem;
+    color: #fff;
+    border-radius: 0 10px 10px 0;
+    h2{color: #fff;}
 }
 
 h2 {
@@ -32,16 +35,16 @@ h2 {
 
 .progressBar {
     width: 80%;
-    height: 8px;
-    background-color: rgba(255, 255, 255, 0.3);
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     margin-top: 1rem;
     position: relative;
 }
 
 .progress {
-    width: 50%; // Adjust this width dynamically if needed
-    height: 100%;
+    width: 25%; // Adjust this width dynamically if needed
+    height: 96%;
     background-color: white;
     border-radius: 4px;
 }
