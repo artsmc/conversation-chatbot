@@ -32,21 +32,7 @@ const Session: React.FC<SessionProps> = () => {
     setConnecting(false);
     setConnected(false);
     setShowPublicKeyInvalidMessage(false);
-    if (chat.vapi_call_id) {
-      const pollInterval = setInterval(async () => {
-      try {
-        const response = await conversationService.currentCall(chat.vapi_call_id);
-        if (response.data.transcript && response.data.notes) {
-        dispatch(fetchTranscriptNotesSuccess(response.data));
-        clearInterval(pollInterval);
-        }
-      } catch (error) {
-        console.error('Error fetching transcript and notes:', error);
-      }
-      }, 5000); // Poll every 5 seconds
-
-      return () => clearInterval(pollInterval);
-    }
+    // x
   }, [chat.vapi_call_id, dispatch, setShowPublicKeyInvalidMessage]);
 
   const handleSpeechStart = useCallback(() => {
@@ -70,14 +56,9 @@ const Session: React.FC<SessionProps> = () => {
   }, [setConnecting, setShowPublicKeyInvalidMessage]);
 
   const handleMessage = useCallback((message: any) => {
-   const send = vapi.send({ type: 'add-message', message:{
-      role: 'system',
-      message: 'Message received',
-    }});
-    console.log(send)
     if(message.type === 'conversation') {
       if (convo.conversation.length < message.conversation.length){
-        dispatch(updateConversation(message.conversation));
+        // dispatch(updateConversation(message.conversation));
       }
     }
   }, []);
@@ -89,7 +70,7 @@ const Session: React.FC<SessionProps> = () => {
     vapi.on('speech-end', handleSpeechEnd);
     vapi.on('volume-level', handleVolumeLevel);
     vapi.on('error', handleError);
-    vapi.on('message', handleMessage);
+    // vapi.on('message', handleMessage);
 
     // Clean up event listeners when component unmounts
     return () => {
